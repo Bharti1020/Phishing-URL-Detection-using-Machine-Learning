@@ -5,7 +5,7 @@ import google.generativeai as genai
 
 app=Flask(__name__)
 #set up the google api key
-os.environ["GOOGLE_API_KEY"]="AIzaSyD3IOl9xyBxbhqpZ81bQlg03mXt1RCf5R0"
+os.environ["GOOGLE_API_KEY"]="YOUR API KEY"
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 model=genai.GenerativeModel("gemini-1.5-flash")
 def predict_fake_or_real_email_content(text):
@@ -67,4 +67,5 @@ def url_predict():
         return render_template("index.html", input_url=url, predicted_class=classification)
     return render_template("index.html")
 if __name__=="__main__":
+
     app.run(debug=True)
